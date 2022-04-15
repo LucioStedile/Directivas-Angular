@@ -27,19 +27,14 @@
   
 </ul>
 
-<ul class="list-group mx-auto my-3 col-3">
-  <li class="list-group-item"
-      *ngFor="let pessoa of pessoas">
-      O nome da pessoa é {{pessoa.nome}} {{pessoa.sobrenome}}.
-  </li>
-</ul>
+<app-list-people></app-list-people>
 
 <!--A diretiva de baixo funciona igual a de cima-->
 
 <ul class="list-group mx-auto my-3 col-3">
   <ng-template ngFor let-pessoa [ngForOf]="pessoas" >
     <li class="list-group-item">
-      O nome da pessoa é {{pessoa.nome}} {{pessoa.sobrenome}}.
+      O nome da pessoa é {{pessoa.firstName}} {{pessoa.lastName}} e tem a idade de {{pessoa.age}} anos.
     </li>
   </ng-template>
 
@@ -58,4 +53,14 @@
   [(ngModel)]="text"
   >
   <h4>Saida: {{text}}</h4>
+</div>
+
+<div class="container my-5">
+  <div class="row d-flex align-items-center justify-content-center">
+    <h2 class="text-center">LISTAGEM DE PERSONAGEM RICK AND MORTY</h2>
+    <div class="col-12">
+      <app-list-api></app-list-api>
+    </div>
+  </div>
+
 </div>
